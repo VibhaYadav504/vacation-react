@@ -12,6 +12,7 @@ const Carousel = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,15 +21,19 @@ const Carousel = () => {
     return () => clearInterval(interval);
   }, [slides.length]);
 
+  const toggleDropdown = (menu) => {
+    setOpenDropdown(openDropdown === menu ? null : menu);
+  };
+
   return (
     <>
       {/* Navbar */}
       <header className="navbar">
         <div className="nav-left">
           <img
-            src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100063942011969"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi0gdhTdJ46lYXuDBRc4e7vhfmtaC7Ck1y8Q&s"
             alt="Jingle Holiday Logo"
-            className="logo"
+            className="logo rotating-logo"
           />
           <h2 className="brand-name">Jingle Holiday</h2>
         </div>
@@ -36,24 +41,42 @@ const Carousel = () => {
         <ul className="nav-menu">
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
-          <li className="dropdown">
-            <a href="#">Domestic ▾</a>
-            <ul className="dropdown-menu">
-              <li><a href="#">Goa</a></li>
-              <li><a href="#">Kerala</a></li>
-              <li><a href="#">Rajasthan</a></li>
-              <li><a href="#">Himachal</a></li>
-            </ul>
+
+          <li className="dropdown" onClick={() => toggleDropdown("domestic")}>
+            <a href="#">Domestic </a>
+            {openDropdown === "domestic" && (
+              <ul className="dropdown-menu">
+                <li><a href="#">Goa</a></li>
+                <li><a href="#">Kerala</a></li>
+                <li><a href="#">Rajasthan</a></li>
+                <li><a href="#">Himachal</a></li>
+              </ul>
+            )}
           </li>
-          <li className="dropdown">
-            <a href="#">International ▾</a>
-            <ul className="dropdown-menu">
-              <li><a href="#">Dubai</a></li>
-              <li><a href="#">Thailand</a></li>
-              <li><a href="#">Bali</a></li>
-              <li><a href="#">Maldives</a></li>
-            </ul>
+
+          <li className="dropdown" onClick={() => toggleDropdown("international")}>
+            <a href="#">International </a>
+            {openDropdown === "international" && (
+              <ul className="dropdown-menu">
+                <li><a href="#">Dubai</a></li>
+                <li><a href="#">Thailand</a></li>
+                <li><a href="#">Bali</a></li>
+                <li><a href="#">Maldives</a></li>
+              </ul>
+            )}
           </li>
+
+          <li className="dropdown" onClick={() => toggleDropdown("info")}>
+            <a href="#">Place </a>
+            {openDropdown === "info" && (
+              <ul className="dropdown-menu">
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Hotels</a></li>
+                <li><a href="#">Gallery</a></li>
+              </ul>
+            )}
+          </li>
+
           <li><a href="#">Packages</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
@@ -72,10 +95,10 @@ const Carousel = () => {
             className={`hero-slide ${index === currentIndex ? "active" : ""}`}
             style={{ backgroundImage: `url(${slide.img})` }}
           >
-            <div className="overlay">
-              <h1>Welcome to Jingle Holiday Bazar Pvt. Ltd.</h1>
-              <p>Discover the Beauty of {slide.name}</p>
-              <button className="contact-btn">Contact Us</button>
+            <div className="hero-overlay">
+              <h1 className="hero-title">Welcome to Jingle Holiday Bazar Pvt. Ltd.</h1>
+              <p className="hero-subtitle">Discover the Beauty of {slide.name}</p>
+              <button className="hero-btn">Contact Us</button>
             </div>
           </div>
         ))}

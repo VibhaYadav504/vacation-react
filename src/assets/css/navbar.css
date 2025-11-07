@@ -1,0 +1,74 @@
+/* Sticky navbar */
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Navbar background color change on scroll */
+.sticky-navbar.scrolled {
+  background-color: #007bff; /* Darker background when scrolled */
+}
+
+/* Navbar brand logo animation */
+.navbar-brand .logo {
+  transition: transform 0.3s ease-in-out;
+}
+.navbar-brand .logo:hover {
+  transform: scale(1.1);
+}
+
+/* Nav item hover animation */
+.nav-item-link {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-item-link:hover {
+  color: #ffcc00 !important; 
+  transform: translateY(-3px); 
+}
+
+/* Dropdown animation */
+.nav-item.dropdown .dropdown-menu {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  opacity: 1;
+}
+
+/* Pay Now button hover effect */
+.pay-now-btn {
+  background-color: #28a745;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.pay-now-btn:hover {
+  background-color: #218838;
+  transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+/* On scroll, change navbar background color */
+body {
+  margin-top: 56px; /* Add margin to prevent content from hiding behind the fixed navbar */
+}
+
+/* Add animation to dropdown on hover */
+.dropdown-menu {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+}
+
+/* Smooth scrolling effect */
+html {
+  scroll-behavior: smooth;
+}

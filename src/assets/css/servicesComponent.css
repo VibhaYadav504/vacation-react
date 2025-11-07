@@ -1,0 +1,146 @@
+/* Services Section */
+.services-section {
+  font-family: "Playfair Display", "serif";
+  color: #333;
+  background: #f9fafc;
+  padding: 40px 15px; /* reduced padding */
+  text-align: center;
+}
+
+.section-header,
+.section-footer {
+  text-align: center;
+}
+
+.section-header h2,
+.section-footer h2 {
+  font-size: 1.8rem; /* slightly smaller */
+  margin-bottom: 8px; /* reduced margin */
+  color: #333;
+  font-weight: 600;
+}
+
+.section-header p,
+.section-footer p {
+  font-size: 0.95rem; /* slightly smaller text */
+  color: #555;
+  max-width: 550px; /* slightly narrower */
+  margin: 0 auto 30px; /* reduced bottom margin */
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Service Cards */
+.service-card {
+  background-color: #fff;
+  border-radius: 18px; /* slightly smaller rounded corners */
+  box-shadow: 
+    0 8px 12px rgba(0, 0, 0, 0.08),
+    0 3px 5px rgba(0, 0, 0, 0.1); /* softer, smaller shadow */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-top: 15px; /* reduced top padding */
+  position: relative;
+  font-family: "Poppins", sans-serif;
+}
+
+.service-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 
+    0 15px 20px rgba(0, 0, 0, 0.12),
+    0 7px 8px rgba(0, 0, 0, 0.08); /* softer floating shadow */
+}
+
+/* Icon Wrapper */
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0 8px 0; /* reduced padding */
+}
+
+.icon-wrapper svg {
+  width: 55px; /* slightly smaller icon */
+  height: 55px;
+  color: #ff6b6b;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.service-card:hover .icon-wrapper svg {
+  transform: scale(1.05);
+  color: #ff3b3b;
+}
+
+/* Card Body */
+.service-card .card-body {
+  padding: 12px 15px 20px 15px; /* reduced padding */
+}
+
+.service-card .card-title {
+  font-size: 1.2rem; /* slightly smaller */
+  margin-top: 8px;
+  margin-bottom: 8px;
+  color: #222;
+  font-weight: 600;
+}
+
+/* Card Text - Truncated to 3 lines */
+.service-card .card-text {
+  font-size: 0.9rem; /* slightly smaller */
+  color: #555;
+  margin-bottom: 15px; /* reduced bottom margin */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.service-card .card-text.expanded {
+  display: block;
+  -webkit-line-clamp: unset;
+}
+
+/* Read More Button */
+.service-card .btn {
+  display: inline-block;
+  padding: 10px 24px; /* smaller button */
+  background: linear-gradient(135deg, #000000, #333333);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 28px;
+  text-decoration: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+
+.service-card .btn:hover {
+  background: linear-gradient(135deg, #333333, #555555);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* Swiper Navigation Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #555;
+}
+
+/* Swiper Pagination Dots */
+.swiper-pagination-bullet {
+  background: #000;
+}
+
+.swiper-pagination-bullet-active {
+  background: #333;
+}

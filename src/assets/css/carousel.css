@@ -29,8 +29,13 @@
 }
 
 @keyframes rotateLogo {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .rotating-logo {
@@ -87,7 +92,7 @@
 .dropdown-menu li a {
   padding: 10px;
   display: block;
-  color: #fff;
+  /* color: #fff; */
 }
 
 .dropdown-menu li a:hover {
@@ -310,4 +315,39 @@
   .hero-subtitle {
     font-size: 14px;
   }
+}
+
+/* ---------------- Dropdown ---------------- */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  /* White background for dropdown */
+  border-radius: 6px;
+  min-width: 160px;
+  z-index: 20;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Each dropdown item (default black text) */
+.dropdown-menu li a {
+  padding: 10px 15px;
+  display: block;
+  color: #000000;
+  /* ✅ black text always visible */
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }

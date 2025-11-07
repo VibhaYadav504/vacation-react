@@ -8,13 +8,15 @@
 
 /* Navbar background color change on scroll */
 .sticky-navbar.scrolled {
-  background-color: #007bff; /* Darker background when scrolled */
+  background-color: #007bff;
+  /* Darker background when scrolled */
 }
 
 /* Navbar brand logo animation */
 .navbar-brand .logo {
   transition: transform 0.3s ease-in-out;
 }
+
 .navbar-brand .logo:hover {
   transform: scale(1.1);
 }
@@ -25,8 +27,8 @@
 }
 
 .nav-item-link:hover {
-  color: #ffcc00 !important; 
-  transform: translateY(-3px); 
+  color: #ffcc00 !important;
+  transform: translateY(-3px);
 }
 
 /* Dropdown animation */
@@ -48,25 +50,19 @@
 
 .pay-now-btn:hover {
   background-color: #218838;
-  transform: translateY(-3px); /* Slight lift effect on hover */
+  transform: translateY(-3px);
 }
 
 /* On scroll, change navbar background color */
 body {
-  margin-top: 56px; /* Add margin to prevent content from hiding behind the fixed navbar */
+  margin-top: 56px;
 }
 
-/* Add animation to dropdown on hover */
+
 .dropdown-menu {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.nav-item:hover .dropdown-menu {
-  display: block;
-  opacity: 1;
-}
 
 /* Smooth scrolling effect */
 html {

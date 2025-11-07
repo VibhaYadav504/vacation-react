@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/css/navbar.css'; 
+import '../assets/css/navbar.css';
 
 const CustomNavbar = () => {
   return (
@@ -25,8 +25,8 @@ const CustomNavbar = () => {
                 Domestic
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdownDomestic">
-                <li><a className="dropdown-item" href="#">Option 1</a></li>
-                <li><a className="dropdown-item" href="#">Option 2</a></li>
+                {/* <li><a className="dropdown-item" href="#">Option 1</a></li>
+                <li><a className="dropdown-item" href="#">Option 2</a></li> */}
               </ul>
             </li>
             <li className="nav-item dropdown">
@@ -34,8 +34,8 @@ const CustomNavbar = () => {
                 International
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdownInternational">
-                <li><a className="dropdown-item" href="#">Option 1</a></li>
-                <li><a className="dropdown-item" href="#">Option 2</a></li>
+                {/* <li><a className="dropdown-item" href="#">Option 1</a></li>
+                <li><a className="dropdown-item" href="#">Option 2</a></li> */}
               </ul>
             </li>
             <li className="nav-item dropdown">
@@ -43,21 +43,21 @@ const CustomNavbar = () => {
                 Place
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdownPlace">
-                <li><a className="dropdown-item" href="#">Option 1</a></li>
-                <li><a className="dropdown-item" href="#">Option 2</a></li>
+                {/* <li><a className="dropdown-item" href="#">Option 1</a></li>
+                <li><a className="dropdown-item" href="#">Option 2</a></li> */}
               </ul>
             </li>
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle nav-item-link" href="#" id="navbarDropdownPackages" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Packages
+                {/* Packages */}
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdownPackages">
-                <li><a className="dropdown-item" href="#">Option 1</a></li>
-                <li><a className="dropdown-item" href="#">Option 2</a></li>
+                {/* <li><a className="dropdown-item" href="#">Option 1</a></li>
+                <li><a className="dropdown-item" href="#">Option 2</a></li> */}
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link nav-item-link" href="#">Contact Us</a>
+              {/* <a className="nav-link nav-item-link" href="#">Contact Us</a> */}
             </li>
             <li className="nav-item">
               <a className="nav-link nav-item-link" href="tel:+918506922777">+91-8506922777</a>

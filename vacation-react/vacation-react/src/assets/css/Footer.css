@@ -1,0 +1,54 @@
+
+.footer-bg {
+  background: linear-gradient(to right, #0066cc, #66ccff);
+  color: white;
+}
+
+.footer-bg a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-bg a:hover {
+  text-decoration: underline;
+}
+
+h4, h5 {
+  font-weight: bold;
+}
+
+ul {
+  padding-left: 0;
+}
+
+ul li {
+  margin: 5px 0;
+}
+
+ul li a {
+  font-size: 1rem;
+}
+
+ul li a:hover {
+  color: #ffcc00;
+}
+
+.btn-outline-light {
+  color: white;
+  border-color: white;
+}
+
+.btn-outline-light:hover {
+  background-color: white;
+  color: #0066cc;
+}
+
+@media (max-width: 768px) {
+  .footer-bg .container {
+    padding: 20px;
+  }
+
+  .footer-bg h4, .footer-bg h5 {
+    font-size: 1.2rem;
+  }
+}

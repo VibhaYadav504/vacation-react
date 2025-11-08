@@ -1,0 +1,116 @@
+import React, { useState, useEffect } from "react";
+import "../assets/css/carousel.css";
+
+const Carousel = () => {
+  const slides = [
+    { name: "Rameshwaram", img: "https://jingleholidaybazar.com/images/rameshwarm-banner.webp" },
+    { name: "Himalayas", img: "https://jingleholidaybazar.com/images/himalay.webp" },
+    { name: "Akshardham Temple", img: "https://jingleholidaybazar.com/images/akshardham-temple.webp" },
+    { name: "Goechala", img: "https://jingleholidaybazar.com/images/goechala-banner.webp" },
+    { name: "Pondicherry", img: "https://jingleholidaybazar.com/images/pondicherry-banner.webp" },
+    { name: "Darjeeling", img: "https://jingleholidaybazar.com/images/darjeeling-banner.webp" },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
+  const toggleDropdown = (menu) => {
+    setOpenDropdown(openDropdown === menu ? null : menu);
+  };
+
+  return (
+    <>
+      
+      <header className="navbar">
+        <div className="nav-left">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi0gdhTdJ46lYXuDBRc4e7vhfmtaC7Ck1y8Q&s"
+            alt="Jingle Holiday Logo"
+            className="logo rotating-logo"
+          />
+          <h2 className="brand-name">Jingle Holiday</h2>
+        </div>
+
+        
+        <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </div>
+
+        <ul className={`nav-menu ${menuOpen ? "active" : ""}`}>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+
+          <li className="dropdown" onClick={() => toggleDropdown("domestic")}>
+            <a href="#">Domestic</a>
+            {openDropdown === "domestic" && (
+              <ul className="dropdown-menu">
+                <li><a href="#">Goa</a></li>
+                <li><a href="#">Kerala</a></li>
+                <li><a href="#">Rajasthan</a></li>
+                <li><a href="#">Himachal</a></li>
+              </ul>
+            )}
+          </li>
+
+          <li className="dropdown" onClick={() => toggleDropdown("international")}>
+            <a href="#">International</a>
+            {openDropdown === "international" && (
+              <ul className="dropdown-menu">
+                <li><a href="#">Dubai</a></li>
+                <li><a href="#">Thailand</a></li>
+                <li><a href="#">Bali</a></li>
+                <li><a href="#">Maldives</a></li>
+              </ul>
+            )}
+          </li>
+
+          <li className="dropdown" onClick={() => toggleDropdown("info")}>
+            <a href="#">Place</a>
+            {openDropdown === "info" && (
+              <ul className="dropdown-menu">
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Hotels</a></li>
+                <li><a href="#">Gallery</a></li>
+              </ul>
+            )}
+          </li>
+
+          <li><a href="#">Packages</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div className="nav-right">
+          <span className="phone-number">📞 +91-8506922777</span>
+          <button className="pay-now">Pay Now</button>
+        </div>
+      </header>
+
+      
+      <section className="hero-container">
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`hero-slide ${index === currentIndex ? "active" : ""}`}
+            style={{ backgroundImage: `url(${slide.img})` }}
+          >
+            <div className="hero-overlay">
+              <h1 className="hero-title">Welcome to Jingle Holiday Bazar Pvt. Ltd.</h1>
+              <p className="hero-subtitle">Discover the Beauty of {slide.name}</p>
+              <button className="hero-btn">Contact Us</button>
+            </div>
+          </div>
+        ))}
+      </section>
+    </>
+  );
+};
+
+export default Carousel;
